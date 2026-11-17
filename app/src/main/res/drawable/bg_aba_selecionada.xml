@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sublinhado azul da aba selecionada na tela Explorar -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="4dp"
+        android:gravity="bottom"
+        android:left="12dp"
+        android:right="12dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/x_azul" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+</layer-list>

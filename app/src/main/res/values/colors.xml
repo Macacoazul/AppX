@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta inspirada no modo escuro do X -->
+    <color name="x_preto">#FF000000</color>
+    <color name="x_texto">#FFE7E9EA</color>
+    <color name="x_cinza">#FF71767B</color>
+    <color name="x_divisor">#FF2F3336</color>
+    <color name="x_azul">#FF1D9BF0</color>
+    <color name="x_rosa">#FFF91880</color>
+    <color name="x_verde">#FF00BA7C</color>
+    <color name="x_amarelo">#FFFFD400</color>
+    <color name="x_vermelho">#FFF4212E</color>
+    <color name="x_busca">#FF202327</color>
+    <color name="x_pressionado">#FF16181C</color>
+    <color name="branco">#FFFFFFFF</color>
+    <color name="ic_launcher_background">#FF000000</color>
+</resources>

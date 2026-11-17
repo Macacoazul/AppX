@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- Céu em degradê -->
+    <path android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerColor="#FFD53369"
+                android:endColor="#FFFFB86B"
+                android:endX="0"
+                android:endY="180"
+                android:startColor="#FF2B1055"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear" />
+        </aapt:attr>
+    </path>
+    <!-- Sol -->
+    <path
+        android:fillColor="#FFFFE08A"
+        android:pathData="M160,120m-38,0a38,38 0,1 1,76 0a38,38 0,1 1,-76 0" />
+    <!-- Montanhas -->
+    <path
+        android:fillColor="#FF6B2D6B"
+        android:pathData="M0,130 L40,95 L80,120 L130,80 L180,118 L230,88 L280,112 L320,92 L320,180 L0,180 Z" />
+    <path
+        android:fillColor="#FF3A1846"
+        android:pathData="M0,150 L50,120 L100,145 L160,112 L215,148 L265,125 L320,140 L320,180 L0,180 Z" />
+    <path
+        android:fillColor="#FF1E0B2B"
+        android:pathData="M0,165 C60,150 120,172 180,160 C240,148 280,170 320,158 L320,180 L0,180 Z" />
+</vector>

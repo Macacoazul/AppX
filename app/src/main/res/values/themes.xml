@@ -1,0 +1,27 @@
+<resources>
+    <!-- Tema escuro do aplicativo, inspirado no modo "Apagado" do X -->
+    <style name="Theme.AppX" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/x_azul</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="colorSecondary">@color/x_azul</item>
+        <item name="colorControlActivated">@color/x_azul</item>
+        <item name="colorSurface">@color/x_preto</item>
+        <item name="android:colorBackground">@color/x_preto</item>
+        <item name="android:windowBackground">@color/x_preto</item>
+        <item name="android:textColorPrimary">@color/x_texto</item>
+        <item name="android:textColorSecondary">@color/x_cinza</item>
+        <item name="android:textColorHint">@color/x_cinza</item>
+    </style>
+
+    <!-- Formato circular (botão flutuante) -->
+    <style name="ShapeAppearance.AppX.Circulo" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Cantos arredondados das imagens dos posts -->
+    <style name="ShapeAppearance.AppX.Midia" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+</resources>

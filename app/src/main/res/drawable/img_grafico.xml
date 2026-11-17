@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- Fundo -->
+    <path android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endColor="#FF0F2D4A"
+                android:endX="320"
+                android:endY="180"
+                android:startColor="#FF0B1420"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear" />
+        </aapt:attr>
+    </path>
+    <!-- Linhas de grade -->
+    <path
+        android:pathData="M20,40H300M20,80H300M20,120H300M20,160H300"
+        android:strokeWidth="1"
+        android:strokeColor="#33FFFFFF" />
+    <!-- Barras -->
+    <path
+        android:fillColor="#FF1D9BF0"
+        android:pathData="M36,130h24v30h-24z M76,115h24v45h-24z M116,120h24v40h-24z M156,95h24v65h-24z M196,80h24v80h-24z M236,60h24v100h-24z M276,38h24v122h-24z" />
+    <!-- Linha de tendência -->
+    <path
+        android:pathData="M48,120 L88,104 L128,110 L168,84 L208,70 L248,48 L288,26"
+        android:strokeWidth="3"
+        android:strokeColor="#FF00BA7C"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#FF00BA7C"
+        android:pathData="M48,120m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0 M168,84m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0 M288,26m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+</vector>

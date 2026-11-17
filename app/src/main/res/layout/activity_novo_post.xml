@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/x_preto"
+    tools:context=".NovoPostActivity">
+
+    <!-- Barra superior: Cancelar | Rascunhos | Postar -->
+    <TextView
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/cancelar"
+        android:textColor="@color/x_texto"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btnRascunhos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/rascunhos"
+        android:textColor="@color/x_azul"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnCancelar"
+        app:layout_constraintEnd_toStartOf="@id/btnPostar"
+        app:layout_constraintTop_toTopOf="@id/btnCancelar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPostar"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:minWidth="0dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="@string/postar"
+        android:textAllCaps="false"
+        android:textColor="@color/branco"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/x_azul"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnCancelar" />
+
+    <TextView
+        android:id="@+id/avatarNovoPost"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_avatar"
+        android:gravity="center"
+        android:textColor="@color/branco"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCancelar"
+        tools:text="EA" />
+
+    <TextView
+        android:id="@+id/publico"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/bg_publico"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/publico_todos"
+        android:textColor="@color/x_azul"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/avatarNovoPost"
+        app:layout_constraintStart_toEndOf="@id/avatarNovoPost"
+        app:layout_constraintTop_toTopOf="@id/avatarNovoPost" />
+
+    <!-- Campo de texto do post -->
+    <EditText
+        android:id="@+id/campoTexto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:gravity="top|start"
+        android:hint="@string/hint_novo_post"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textCapSentences"
+        android:textColor="@color/x_texto"
+        android:textColorHint="@color/x_cinza"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@id/infoResposta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatarNovoPost"
+        app:layout_constraintTop_toBottomOf="@id/publico" />
+
+    <LinearLayout
+        android:id="@+id/infoResposta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/divisorFerramentas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_globe"
+            app:tint="@color/x_azul" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/qualquer_pessoa_responde"
+            android:textColor="@color/x_azul"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divisorFerramentas"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/x_divisor"
+        app:layout_constraintBottom_toTopOf="@id/ferramentas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Ferramentas: mídia, enquete, localização e contador de caracteres -->
+    <LinearLayout
+        android:id="@+id/ferramentas"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/btnImagem"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="22dp"
+            android:contentDescription="@string/desc_imagem"
+            app:srcCompat="@drawable/ic_image"
+            app:tint="@color/x_azul" />
+
+        <ImageView
+            android:id="@+id/btnEnquete"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="22dp"
+            android:contentDescription="@string/desc_enquete"
+            app:srcCompat="@drawable/ic_poll"
+            app:tint="@color/x_azul" />
+
+        <ImageView
+            android:id="@+id/btnLocal"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:contentDescription="@string/desc_local"
+            app:srcCompat="@drawable/ic_location"
+            app:tint="@color/x_azul" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/contador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/x_cinza"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:text="20"
+            tools:visibility="visible" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progresso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="280"
+            app:indicatorColor="@color/x_azul"
+            app:indicatorSize="24dp"
+            app:trackColor="@color/x_divisor"
+            app:trackThickness="2.5dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/x_divisor" />
+
+        <ImageView
+            android:id="@+id/btnMaisPosts"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:contentDescription="@string/desc_novo_post"
+            app:srcCompat="@drawable/ic_add"
+            app:tint="@color/x_azul" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

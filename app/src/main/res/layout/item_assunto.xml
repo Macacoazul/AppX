@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Item da lista de assuntos do momento (tela Explorar) -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:id="@+id/categoriaAssunto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:singleLine="true"
+        android:textColor="@color/x_cinza"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@id/maisAssunto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1 · Tecnologia · Assunto do Momento" />
+
+    <TextView
+        android:id="@+id/tituloAssunto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/x_texto"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/maisAssunto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoriaAssunto"
+        tools:text="#AndroidStudio" />
+
+    <TextView
+        android:id="@+id/postsAssunto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/x_cinza"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@id/maisAssunto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloAssunto"
+        tools:text="12,4 mil posts" />
+
+    <ImageView
+        android:id="@+id/maisAssunto"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_more"
+        app:tint="@color/x_cinza" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

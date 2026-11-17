@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/x_preto"
+    tools:context=".DetalhePostActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:background="@color/x_preto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/x_texto"
+        app:title="@string/titulo_post"
+        app:titleTextColor="@color/x_texto" />
+
+    <ScrollView
+        android:id="@+id/rolagem"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/divisorResposta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/avatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_avatar"
+                    android:gravity="center"
+                    android:textColor="@color/branco"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="AS" />
+
+                <LinearLayout
+                    android:id="@+id/linhaNome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@id/usuario"
+                    app:layout_constraintEnd_toStartOf="@id/btnMais"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintTop_toTopOf="@id/avatar"
+                    app:layout_constraintVertical_chainStyle="packed">
+
+                    <TextView
+                        android:id="@+id/nome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="@color/x_texto"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="Ana Souza" />
+
+                    <ImageView
+                        android:id="@+id/verificado"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="2dp"
+                        android:importantForAccessibility="no"
+                        app:srcCompat="@drawable/ic_verified"
+                        app:tint="@color/x_azul" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/usuario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="@color/x_cinza"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/avatar"
+                    app:layout_constraintEnd_toEndOf="@id/linhaNome"
+                    app:layout_constraintStart_toStartOf="@id/linhaNome"
+                    app:layout_constraintTop_toBottomOf="@id/linhaNome"
+                    tools:text="\@anasouza" />
+
+                <ImageView
+                    android:id="@+id/btnMais"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/desc_mais"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/avatar"
+                    app:srcCompat="@drawable/ic_more"
+                    app:tint="@color/x_cinza" />
+
+                <TextView
+                    android:id="@+id/texto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/x_texto"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/avatar"
+                    tools:text="Texto do post" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imagem"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:importantForAccessibility="no"
+                    android:padding="0.5dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/texto"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.AppX.Midia"
+                    app:strokeColor="@color/x_divisor"
+                    app:strokeWidth="1dp" />
+
+                <TextView
+                    android:id="@+id/dataHora"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:textColor="@color/x_cinza"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imagem"
+                    tools:text="10:42 · 16 de nov. de 2026 · 12 mil Visualizações" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/x_divisor" />
+
+            <TextView
+                android:id="@+id/estatisticas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4dp"
+                android:paddingStart="16dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="14dp"
+                android:textColor="@color/x_cinza"
+                android:textSize="15sp"
+                tools:text="312 Reposts  2 mil Curtidas  45 Itens salvos" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/x_divisor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:id="@+id/acaoResponder"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_responder"
+                    android:padding="14dp"
+                    app:srcCompat="@drawable/ic_reply"
+                    app:tint="@color/x_cinza" />
+
+                <ImageView
+                    android:id="@+id/acaoRepostar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_repostar"
+                    android:padding="14dp"
+                    app:srcCompat="@drawable/ic_repost"
+                    app:tint="@color/x_cinza" />
+
+                <ImageView
+                    android:id="@+id/acaoCurtir"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_curtir"
+                    android:padding="14dp"
+                    app:srcCompat="@drawable/ic_heart"
+                    app:tint="@color/x_cinza" />
+
+                <ImageView
+                    android:id="@+id/acaoSalvar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_salvar"
+                    android:padding="14dp"
+                    app:srcCompat="@drawable/ic_bookmark"
+                    app:tint="@color/x_cinza" />
+
+                <ImageView
+                    android:id="@+id/acaoCompartilhar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_compartilhar"
+                    android:padding="14dp"
+                    app:srcCompat="@drawable/ic_share"
+                    app:tint="@color/x_cinza" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/x_divisor" />
+
+            <!-- Respostas são adicionadas aqui dinamicamente -->
+            <LinearLayout
+                android:id="@+id/containerRespostas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/semRespostas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/sem_respostas"
+                android:textColor="@color/x_cinza"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/divisorResposta"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/x_divisor"
+        app:layout_constraintBottom_toTopOf="@id/barraResposta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Caixa para responder ao post -->
+    <LinearLayout
+        android:id="@+id/barraResposta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/avatarResposta"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_avatar"
+            android:gravity="center"
+            android:textColor="@color/branco"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="EA" />
+
+        <EditText
+            android:id="@+id/campoResposta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/hint_resposta"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLines="4"
+            android:minHeight="40dp"
+            android:textColor="@color/x_texto"
+            android:textColorHint="@color/x_cinza"
+            android:textSize="15sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResponder"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:alpha="0.5"
+            android:enabled="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/responder"
+            android:textAllCaps="false"
+            android:textColor="@color/branco"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/x_azul"
+            app:cornerRadius="18dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

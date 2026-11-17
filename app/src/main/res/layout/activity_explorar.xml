@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/x_preto"
+    tools:context=".ExplorarActivity">
+
+    <!-- Cabeçalho com campo de busca -->
+    <LinearLayout
+        android:id="@+id/cabecalhoBusca"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/avatarExplorar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_avatar"
+            android:gravity="center"
+            android:textColor="@color/branco"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="EA" />
+
+        <EditText
+            android:id="@+id/campoBusca"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_busca"
+            android:drawableStart="@drawable/ic_search_small"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_busca"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:singleLine="true"
+            android:textColor="@color/x_texto"
+            android:textColorHint="@color/x_cinza"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/btnConfigExplorar"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:contentDescription="@string/desc_config"
+            app:srcCompat="@drawable/ic_settings"
+            app:tint="@color/x_texto" />
+    </LinearLayout>
+
+    <!-- Abas de categorias (criadas no código) -->
+    <HorizontalScrollView
+        android:id="@+id/rolagemAbas"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cabecalhoBusca">
+
+        <LinearLayout
+            android:id="@+id/containerAbas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/divisorAbasExplorar"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/x_divisor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rolagemAbas" />
+
+    <ListView
+        android:id="@+id/listaAssuntos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="@null"
+        android:listSelector="@drawable/selector_item"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divisorAbasExplorar" />
+
+    <TextView
+        android:id="@+id/semResultados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="@string/nenhum_resultado"
+        android:textColor="@color/x_cinza"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divisorAbasExplorar" />
+
+    <include
+        android:id="@+id/barraNavegacao"
+        layout="@layout/barra_navegacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

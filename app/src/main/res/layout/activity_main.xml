@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/x_preto"
+    tools:context=".MainActivity">
+
+    <!-- Barra superior: foto de perfil, logo e configurações -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:background="@color/x_preto"
+        app:contentInsetEnd="16dp"
+        app:contentInsetStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/meuAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="start|center_vertical"
+            android:background="@drawable/bg_avatar"
+            android:contentDescription="@string/desc_avatar"
+            android:gravity="center"
+            android:textColor="@color/branco"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="EA" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/desc_logo"
+            app:srcCompat="@drawable/ic_x_logo"
+            app:tint="@color/x_texto" />
+
+        <ImageView
+            android:id="@+id/btnConfig"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="end|center_vertical"
+            android:contentDescription="@string/desc_config"
+            app:srcCompat="@drawable/ic_settings"
+            app:tint="@color/x_texto" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Guideline vertical em 50% para dividir as duas abas -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/abaParaVoce"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/aba_para_voce"
+        android:textColor="@color/x_texto"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guiaCentro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/abaSeguindo"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/aba_seguindo"
+        android:textColor="@color/x_cinza"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guiaCentro"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <!-- Indicadores azuis da aba selecionada -->
+    <View
+        android:id="@+id/indicadorParaVoce"
+        android:layout_width="74dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_indicador_aba"
+        app:layout_constraintBottom_toBottomOf="@id/abaParaVoce"
+        app:layout_constraintEnd_toEndOf="@id/abaParaVoce"
+        app:layout_constraintStart_toStartOf="@id/abaParaVoce" />
+
+    <View
+        android:id="@+id/indicadorSeguindo"
+        android:layout_width="70dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_indicador_aba"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/abaSeguindo"
+        app:layout_constraintEnd_toEndOf="@id/abaSeguindo"
+        app:layout_constraintStart_toStartOf="@id/abaSeguindo" />
+
+    <View
+        android:id="@+id/divisorAbas"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/x_divisor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/abaParaVoce" />
+
+    <!-- Linha do tempo: lista de posts -->
+    <ListView
+        android:id="@+id/listaPosts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="@color/x_divisor"
+        android:dividerHeight="1px"
+        android:listSelector="@drawable/selector_item"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divisorAbas" />
+
+    <!-- Botão flutuante para criar um novo post -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNovoPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/desc_novo_post"
+        app:backgroundTint="@color/x_azul"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.AppX.Circulo"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/branco" />
+
+    <include
+        android:id="@+id/barraNavegacao"
+        layout="@layout/barra_navegacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">X Clone</string>
+
+    <!-- Tela inicial -->
+    <string name="aba_para_voce">Para você</string>
+    <string name="aba_seguindo">Seguindo</string>
+    <string name="desc_logo">Logo do X</string>
+    <string name="desc_avatar">Foto de perfil</string>
+    <string name="desc_config">Configurações</string>
+    <string name="desc_novo_post">Criar novo post</string>
+    <string name="post_enviado">Seu post foi enviado.</string>
+    <string name="configuracoes">Configurações e privacidade</string>
+
+    <!-- Barra de navegação -->
+    <string name="nav_inicio">Início</string>
+    <string name="nav_buscar">Buscar</string>
+    <string name="nav_comunidades">Comunidades</string>
+    <string name="nav_notificacoes">Notificações</string>
+    <string name="nav_mensagens">Mensagens</string>
+    <string name="em_breve">%1$s: em breve!</string>
+    <string name="notificacoes_lidas">Você leu 3 novas notificações</string>
+
+    <!-- Ações do post -->
+    <string name="desc_responder">Responder</string>
+    <string name="desc_repostar">Repostar</string>
+    <string name="desc_curtir">Curtir</string>
+    <string name="desc_visualizacoes">Visualizações</string>
+    <string name="desc_salvar">Salvar</string>
+    <string name="desc_compartilhar">Compartilhar</string>
+    <string name="desc_mais">Mais opções</string>
+    <string name="adicionado_salvos">Adicionado aos Itens salvos</string>
+    <string name="removido_salvos">Removido dos Itens salvos</string>
+    <string name="compartilhar_post">Compartilhar post</string>
+    <string name="visualizacoes_toast">%1$s visualizações</string>
+    <string name="mais_opcoes">Seguir, silenciar ou denunciar</string>
+
+    <!-- Novo post -->
+    <string name="cancelar">Cancelar</string>
+    <string name="rascunhos">Rascunhos</string>
+    <string name="postar">Postar</string>
+    <string name="publico_todos">Todos</string>
+    <string name="hint_novo_post">O que está acontecendo?</string>
+    <string name="qualquer_pessoa_responde">Qualquer pessoa pode responder</string>
+    <string name="desc_imagem">Adicionar imagem</string>
+    <string name="desc_enquete">Criar enquete</string>
+    <string name="desc_local">Adicionar localização</string>
+
+    <!-- Detalhe do post -->
+    <string name="titulo_post">Post</string>
+    <string name="hint_resposta">Postar sua resposta</string>
+    <string name="responder">Responder</string>
+    <string name="sem_respostas">Ainda não há respostas. Seja o primeiro!</string>
+    <string name="resposta_enviada">Sua resposta foi enviada.</string>
+
+    <!-- Explorar -->
+    <string name="hint_busca">Buscar</string>
+    <string name="nenhum_resultado">Nenhum resultado encontrado</string>
+    <string name="buscando">Buscando por %1$s</string>
+</resources>
